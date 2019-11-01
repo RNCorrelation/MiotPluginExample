@@ -1,0 +1,33 @@
+{
+  "name": "com.lumi.acparnter",
+  "version": "0.0.1",
+  "scripts": {
+    "xlsx2js": "node Modules/Mijia-CommonFunction-Modules/DevTools/commanderUtils.js --type xlsx2js",
+    "js2xlsx": "node Modules/Mijia-CommonFunction-Modules/DevTools/commanderUtils.js --type js2xlsx",
+    "xlsx2jsCommon": "node Modules/Mijia-CommonFunction-Modules/DevTools/commanderUtils.js --type xlsx2jsCommon",
+    "js2xlsxCommon": "node Modules/Mijia-CommonFunction-Modules/DevTools/commanderUtils.js --type js2xlsxCommon",
+    "dev": "node Modules/Mijia-CommonFunction-Modules/DevTools/commanderUtils.js --type dev && node ../../bin/runProject.js --reset-cache",
+    "build": "node Modules/Mijia-CommonFunction-Modules/DevTools/commanderUtils.js --type build",
+    "tinypng": "node Modules/Mijia-CommonFunction-Modules/DevTools/commanderUtils.js --type tinypng",
+    "longest": "node Modules/Mijia-CommonFunction-Modules/DevTools/commanderUtils.js --type dev-longestLanguage && node ../../bin/runProject.js --reset-cache"
+  },
+  "dependencies": {
+    "LHCommonFunction": "file:./Modules/Mijia-CommonFunction-Modules",
+    "LHCommonUI": "file:./Modules/Mijia-CommonUI-Modules",
+    "PluginConfig": "file:./Main/PluginConfig",
+    "Resources": "file:./Resources",
+    "base64-js": "^1.3.1",
+    "react-native-root-toast": "^3.0.2",
+    "react-redux": "^6.0.0",
+    "redux": "^4.0.1",
+    "redux-actions": "^2.6.4",
+    "redux-promise": "^0.6.0"
+  },
+  "devDependencies": {
+    "fs-extra": "^7.0.1",
+    "node-xlsx": "^0.14.1",
+    "yargs": "^13.2.2",
+    "tinify": "^1.6.0-beta.2",
+    "tinypng": "^0.1.1"
+  }
+}

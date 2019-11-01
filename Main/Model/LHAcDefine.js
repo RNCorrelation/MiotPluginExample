@@ -1,0 +1,21 @@
+/* eslint-disable camelcase */
+export const kNONE_AC_POWER_TOGGLE_KEY = 'POWER';
+export const kNONE_AC_POWER_ON_KEY = 'POWER_ON';
+export const kNONE_AC_POWER_OFF_KEY = 'POWER_OFF';
+export const kNONE_AC_MODE_KEY = 'MODE';
+export const kNONE_AC_TEMP_PLUS_KEY = 'TEMP+';
+export const kNONE_AC_TEMP_MINUS_KEY = 'TEMP-';
+export const kNONE_AC_FAN_SPEED_KEY = 'FAN_SPEED';
+export const kNONE_AC_WIND_SPEED_KEY = 'WIND_SPEED';
+export const kNONE_AC_WIND_DIRECT_KEY = 'DIRECTION';
+export const kNONE_AC_WIND_SWING_KEY = 'SWING';
+export const kNONE_AC_WIND_SWING_UD_KEY = 'UD_WIND_MODE_SWING';
+export const kNONE_AC_WIND_FIX_UD_KEY = 'UD_WIND_MODE_FIX';
+export const kNONE_AC_WIND_UD_KEY = 'UD_WIND_MODE';
+export const kNONE_AC_WIND_LR_KEY = 'LR_WIND_MODE';
+export const kNONE_AC_SLEEP_KEY = 'SLEEP';
+export const kNONE_AC_TIMER_KEY = 'TIMER';
+export const kNONE_AC_HEAT_KEY = 'HEAT';
+export const kNONE_AC_COOL_KEY = 'COOL';
+export const STATE_POWER_ON = 'P0';
+export const STATE_POWER_OFF = 'P1';

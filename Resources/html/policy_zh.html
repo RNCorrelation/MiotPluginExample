@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+
+<style type="text/css">
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+
+kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb
+}
+
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+.red {
+  color:  rgba(255,0,0,.8);
+}
+</style>
+
+
+</head>
+
+<body>
+
+<h2 >隐私政策</h2>
+
+<h3 >更新！</h3>
+<p>我们的隐私政策已于2019 年4月6日更新。我们对隐私政策进行了修订，从该日期开始，这一隐私政策能够提供有关我们如何管理您在使用米家空调伴侣2和服务时透露的个人信息的隐私详情。</p>
+<p>请花一些时间熟悉我们的隐私权惯例，如果您有任何问题，请告诉我们。</p>
+
+<h3 >我们向您承诺</h3>
+<p>本隐私政策规定了深圳绿米联创科技有限公司及关联公司（下文简称“绿米”或“我们”）如何收集、使用、披露、处理和保护您在使用我们的产品和服务时提供给我们的信息。若我们要求您提供某些信息，以便在使用绿米产品和服务时验证您的身份，我们将仅严格遵守本隐私政策和/或我们的用户条款与条件来使用这些信息。</p>
+<p>本隐私政策在制定时充分考虑到您的需求；您全面了解我们的个人资料收集和使用惯例而且确信自己最终能控制提供给绿米的个人信息，这一点至关重要。</p>
+<p>在这项隐私政策中，“个人信息”指信息本身或与绿米能够访问的个人的其他信息联系后能够识别特定个人的数据。</p>
+<p>通过使用绿米产品和服务，即表示您已阅读、认可并接受本隐私政策中所述之所有条款，包括我们随时作出的任何变更。我们承诺遵照适用法律（包括您所在地的数据保护法律）来保护您的个人信息的隐私、机密和安全。同时我们承诺我们的全体员工和代理商履行这些义务。</p>
+<p>最后，我们所希望的就是为我们的用户带来最好的体验。如果您对这一隐私政策中概括的数据处理惯例有任何疑问，请通过privacy@lumiunited.com 联系我们的数据保护官，以便我们处理您的特殊需求。我们很高兴能直接处理您的问题。</p>
+
+<h3 >收集哪些信息以及如何使用信息？</h3>
+<h4>收集的信息类别</h4>
+<p>为了向您提供我们的服务，我们会要求您提供向您提供服务所必需的个人信息。如果您不提供个人信息，我们可能无法向您提供我们的产品或服务。</p>
+<p>我们收集以下各类信息（无论其是否为个人信息）：</p>
+
+<p>
+  <strong>您提供给我们或上传的信息（包括您的联系方式）：</strong>我们可能收集您提供给我们的任一或所有个人信息，例如小米账号信息。
+</p>
+<p><strong>设备信息：</strong>我们可能收集并使用您的设备信息，例如用户设备类型，产品Model信息，产品的设备号、IP地址、MAC地址，用于区分设备提供服务，诊断和解决用户反馈的问题。 </p>
+<p>
+  <strong>Wi-Fi信息： </strong>我们可能收集并使用您的Wi-Fi信息，例如ssid和对应的信号强弱，以及链接Wi-Fi使用网络服务所必需收集的信息。
+</p>
+<p>
+  <strong>空调信息： </strong>我们可能会收集并使用您的空调信息，例如空调品牌，空调运行功率，空调开/关、温度、模式、风速和扫风状态，用于在APP中呈现空调状态。
+</p>
+<p><strong>用户场景：</strong>我们可能收集并使用提供用户场景功能所必需的存储记录的信息。</p>
+<p><strong>设备日志：</strong>我们可能收集设备日志，例如用户的崩溃日志，用户对设备的操作，用于改善产品和程序的体验。</p>
+
+
+<h4>这些个人信息将会被如何使用</h4>
+<p>收集个人信息的目的在于向您提供产品和/或服务，并且保证我们遵守适用法律。您特此同意我们出于本隐私政策规定的目的处理个人信息，并向我们的关联公司（其涉及通信、社交媒体、技术和云业务）、第三方服务供应商（定义如下）披露个人信息。</p>
+<p>我们可能会将您的个人信息用于下列目的：</p>
+<ul>
+  <li>提供、处理、维护、改善、开发我们的商品和/或提供给您的服务，包括售后服务和客户支持，以及通过设备或网站提供的服务</li>
+  <li>与您就您的设备、服务或任何普通查询（例如更新、客户咨询支持、我们活动的相关信息、通知）等进行交流。</li>
+  <li>分析和开发与我们产品及服务的使用相关的统计信息，以更好地改进我们的产品和服务。</li>
+  <li>您的空调信息将用于为您提供米家APP的功能，例如在米家APP的插件页面中展示您空调的信息，以及远程通过米家APP控制空调的功能。</li>
+  <li>以及为您提供用户场景功能。</li>
+</ul>
+
+
+<h4>直接推广</h4>
+<p>我们可能会使用您的小米账号向您提供绿米公司的产品和服务相关的推广资料。我们严格遵守您所在地的数据保护法，要求独立的明确许可，所以我们只会在征得您的同意或您表示不反对时使用您的个人信息。您有权终止我们使用计划用于直接推广的个人数据。如果您不再希望接收某些类别的电子邮件，您可以通过发送邮件到privacy@lumiunited.com来取消订阅。我们不会将您的个人信息传送给我们的商业伙伴以便用于直接推广。</p>
+
+
+<h3>我们与谁共享您的信息？</h3>
+<p>我们不会将任何个人信息出售给第三方。</p>
+<p>我们有时可能会向第三方（定义见下文）披露您的个人信息，以便提供您要求的产品或服务。</p>
+<p>我们可能会向本部分下文列出的第三方服务供应商和关联公司作出披露。在本部分所述的各种情况下，您可以放心，绿米仅会根据您的授权共享您的个人信息。您应当了解，在下文描述的任何情况下，当绿米与第三方服务供应商共享您的个人信息时，绿米会通过合同规定第三方的实践和义务，遵守适用的地方数据保护法。绿米会通过合同保证第三方服务供应商遵守您所属司法管辖区中适用于他们的隐私权标准。</p>
+
+<h4>与我们集团和第三方服务供应商共享信息</h4>
+<p>为了顺利地从事商业经营，以向您提供产品和服务的全部功能，我们可能不时向其他的绿米关联公司或我们的第三方服务供应商（我们的邮寄商店、送货服务供应商、电信公司、数据中心、数据存储设施、客户服务供应商、广告和推广服务供应商、代表绿米的代理）[关联公司和/或其他第三方]（统称为“第三方服务供应商”）披露您的个人信息。此类第三方服务供应商可能代表绿米或出于上述的一项或多项目的处理您的个人信息。如果您不再希望允许我们共享这些信息，请发送电子邮件到 privacy@lumiunited.com 联系我们。</p>
+
+<h4>与我们集团的生态系统公司共享信息</h4>
+<p>小米和一组很酷的公司合作，共同构成了小米生态系统。小米生态系统公司是由小米投资和运营的独立实体，并且是这些领域内的专家。绿米可能会向小米生态系统公司披露您的个人信息，以便为您提供和改善来自于小米生态系统公司的令人兴奋的产品和服务（包括软件、硬件）。某些产品和服务仍使用小米/米家/米兔品牌，但其他产品可能使用其自己的品牌。小米生态系统公司可能不时与小米共享与小米品牌的产品和服务相关的数据，以提供软件、硬件服务，带来更好的功能和用户体验。如果绿米参与兼并、收购或出售其资产的全部或部分，我们将通过电子邮件和/或在我们网站上发布醒目通知，告知对您个人信息所有权、使用方面的任何变化，以及您可能拥有的关于您个人信息的任何选择。</p>
+
+<h4>与其他人共享信息</h4>
+<p>在适用法律要求时，绿米可能会不经过进一步同意而披露您的个人信息。</p>
+
+<h4>不需要同意的信息</h4>
+<ul>
+  <li>我们可能以汇总的形式与第三方（例如我们网站上的广告商）共享匿名信息，用于商业目的；我们可能与其共享我们服务的一般使用趋势，例如在购买某些产品或从事某些交易的特定人群中的客户数量。</li>
+  <li>为免存疑，绿米可能在地方数据保护法明确允许的情况下和范围内（例如为了遵循传票）不经您的同意而收集、使用或披露您的个人信息，并且当我们可能会出于诚意相信为了保护我们的权利、保护您的安全或他人安全、为调查欺诈行为或对政府要求作出回应而必需披露时，不经您的同意而披露您的信息。</li>
+</ul>
+
+<h3>安全保障</h3>
+
+<h4>绿米的安全措施</h4>
+<p>我们承诺保证您的个人信息安全。为了防止未经授权的访问、披露或其他类似风险，我们落实了合理的物理、电子和管理措施流程，保护我们从您在使用绿米产品和服务时收集的信息。我们将采取所有合理的措施保护您的个人信息。</p>
+<p>您的个人信息全都被储存在安全的服务器上，并在受控设施中受到保护。我们依据重要性和敏感性对您的数据进行分类，并且保证您的个人信息具有最高的安全等级。我们保证通过访问这些信息来帮助向您提供产品和服务的员工和第三方服务供应商具有严格的合同保密义务，如果未能履行这些义务，其将会受到纪律处分或被终止合作。总而言之，我们定期审查信息收集、储存和处理实践，包括物理安全措施，以防止任何未经授权的访问和使用。</p>
+<p>我们将采取所有可行的措施保护您的个人信息。但是，您应当意识到互联网的使用并不总是安全的，因此，我们不能保证在通过互联网双向传输时任何个人信息的安全性或完整性。</p>
+
+<h4>您能做什么！</h4>
+<ul>
+  <li>您可以通过不向任何人（除非此人经您正式授权）披露您的登录密码或账户信息，为保护您个人信息的安全发挥作用。</li>
+  <li>绿米不对因您未能保持个人信息的私密性而导致第三方访问您的个人信息进而造成的安全疏漏承担责任。尽管有上述规定，如果发生互联网其他任何用户未经授权使用您账户的情况或其他任何安全漏洞，您必须立即通知我们。</li>
+  <li>您的协助将有助于我们保护您个人信息的私密性。</li>
+</ul>
+
+<h4>保留政策</h4>
+<p>如有必要实现收集信息的目的，或者遵守适用法律要求或允许，我们将一直保留个人信息。只要能够合理推断保留个人信息不能实现收集个人信息的目的，并且出于法律、解决纠纷、强制实施我们的协议或其他商业目的不再需要保留信息时，我们将不再保留个人信息，或者会消除将个人信息和特定个人关联起来的途径。</p>
+
+<h4>访问您的设备上的其他功能</h4>
+<p>我们的应用程序可能会访问您设备上的某些功能，例如Wi-Fi 网络状态，以及其他功能。这些信息用于允许这些应用程序在您的设备上运行，并且允许您与其互动。在任何时候，您可以通过在设备水平上关闭应用程序或者通过 privacy@lumiunited.com 联系我们来撤销许可。</p>
+
+<h3>您可以控制您的信息！</h3>
+
+<h4>控制设置</h4>
+<p>绿米承认每个人对隐私权的关注各不相同。因此，我们提供了一些示例，说明绿米提供的各种方式，供您选择，以限制收集、使用、披露或处理您的个人信息，并控制您的隐私权设置：如清除您APP端的缓存数据和历史活动数据。</p>
+<p>绿米了解私隐疑虑因人而异。因此，绿米为您提供选择以限制收集、使用、披露：清除快取资料、清除应用程式的历史活动：</p>
+<ul>
+  <li>登陆或登出小米账号</li>
+  <li>绑定或解绑设备</li>
+</ul>
+<p>如果您之前因为上述目的同意我们使用您的个人信息，您可以随时通过书面或者向 privacy@lumiunited.com 发送邮件的方式联系我们来改变您的决定。</p>
+
+<h4>访问、更新或更正您的个人信息</h4>
+<ul>
+  <li>您有权要求访问和/或更正我们持有的与您有关的任何个人信息。当您更新个人信息时，在我们处理您的请求前，会要求验证您的身份。一旦我们获得充分信息，可处理您的请求以访问或更正您的个人信息时，我们将在适用数据保护法规定的时间内对您的请求做出回应。</li>
+  <li>我们通常免费提供这些服务，但是保留对您的数据访问请求收取合理费用的权利。</li>
+  <li>如果您希望请求访问我们持有的个人数据或者如果您认为我们持有的关于您的任何信息是不正确或不完整的，请尽快致信或者向下方提供的电子邮箱地址发送电子邮件联系我们。电子邮箱：privacy@lumiunited.com。</li>
+</ul>
+
+<h4>撤销同意</h4>
+<ul>
+  <li>·您可以通过进入APP依次点击设置--使用条款和隐私政策--撤销“使用条款和隐私政策”授权，以撤销同意收集、使用和/或披露我们掌握或控制的您的个人信息。我们将会在您做出请求后的合理时间内处理您的请求，并且会根据您的请求，在此后不再收集、使用和/或披露您的个人信息。</li>
+  <li>·请注意，您撤销同意会导致某些法律后果。根据您撤销同意让我们处理您的个人信息的范围，这可能表示您不能享受绿米的产品和服务。</li>
+</ul>
+
+<h4>将个人信息转移到您所属的司法管辖区之外</h4>
+<p>如果我们需要将个人信息转移到您所属的司法管辖区之外，无论是转移给我们的关联公司或第三方服务供应商时，我们将按照适用法律进行。特别是，我们通过落实合适的安全保障措施，保证所有这类转移满足适用的地方数据保护法的要求。</p>
+<p>目前，绿米在中国、新加坡、德国和俄罗斯设有数据中心。这些海外司法管辖区可能有或者没有与您所属司法管辖区的数据保护法类似的数据保护法。我们可能会向我们的海外设施转让并存储您的个人信息。但是，这并不会改变我们对遵守本隐私政策保护您的个人信息的所有承诺。</p>
+
+<h3>其他规定</h3>
+
+<h4>未成年人</h4>
+<p>我们认为监督孩子使用我们的产品和服务是父母的责任。但是，我们的政策不要求获得未成年人的个人信息，或者向这类人群发送任何促销资料。
+</p>
+<p>绿米不会寻求或试图寻求接收来自未成年人的任何个人信息。如果家长或监护人有理由相信未成年人未经他们事先同意而向绿米提交了个人信息，请联系我们以确保删除此类个人信息，并保证未成年人取消订阅任何适用的绿米服务。</p>
+
+<h4>优先顺序</h4>
+<p>如果您同意了适用的用户协议，并且此类用户协议和本隐私政策之间存在不一致，将以此类用户协议为准。</p>
+
+<h4>隐私政策的更新</h4>
+<p>我们会对隐私政策进行定期审核，为反映我们信息惯例的变更，我们可能会更新本隐私政策。如果我们对本隐私政策进行重大变更，我们将通过（向您账户指定的邮箱地址发送）电子邮件或在所有绿米网站公布或通过软件通知您，这样您可以了解我们收集的信息以及我们如何使用这些信息。此类隐私政策变化将从通知或网站规定的生效日期开始适用。我们建议您定期查阅本网页获取我们隐私权实践的最新信息。您继续使用产品和网站、手机和/或其他任何设备上的服务，将被视为接受更新的隐私政策。在我们向您收集更多的个人信息或我们希望因为新的目的使用或披露您的个人信息时，我们会再次征得您的同意。</p>
+
+<h4>我是否必须同意任何第三方条款与条件？</h4>
+<p>我们的隐私政策不适用于第三方提供的产品和服务。绿米产品和服务可能包括第三方的产品和服务，以及第三方网站的链接。当您使用这些产品或服务时，也可能收集您的信息。因此，我们强烈建议您花时间阅读该第三方的隐私政策，就像阅读我们的政策一样。我们不对第三方如何使用他们向您收集的个人信息负责，也不能控制其使用。我们的隐私政策不适用通过我们的服务链接的其他网站。</p>
+
+
+
+<p>深圳绿米联创科技有限公司 </p>
+
+<p>地址：深圳市南山区桃源街道留仙大道金骐智谷大厦8楼801-806</p>
+
+<p>电子邮箱： privacy@lumiunited.com</p>
+
+<p>感谢您花时间了解我们的隐私政策！</p>
+
+
+</body>
+
+</html>

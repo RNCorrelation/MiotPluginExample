@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+
+<style type="text/css">
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+
+kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb
+}
+
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+.red {
+  color:  rgba(255,0,0,.8);
+}
+</style>
+
+
+</head>
+
+<body>
+
+<h2 >PRIVACY POLICY</h2>
+
+<h3 >Updated!</h3>
+<p>Our Privacy Policy was updated on 6 April 2019. We have revamped the Privacy Policy front and back so that from this date onwards, this Privacy Policy can provide privacy details on how we manage your personal information for Mi Smart Air Conditioner Controller 2 products and services.</p>
+<p>Please take a moment to familiarize yourself with our privacy practices and let us know if you have any questions.</p>
+
+<h3 >OUR COMMITMENT TO YOU</h3>
+<p>This Privacy Policy sets out how Lumi United Technology Co., Ltd. and its affiliated companies ("Lumi", "we", "our" or "us") collect, use, disclose, process and protect any information that you give us when you use our products and services. If we ask you to provide certain information in order to verify your identity when using Lumi products or services, we will use this information in strict accordance with this Privacy Policy and/or our User Terms and Conditions.</p>
+<p>The Privacy Policy is designed with you in mind, and it is important that you have a comprehensive understanding of our personal information collection and usage practices, as well as full confidence that ultimately, you have control of any personal information provided to Lumi.</p>
+<p>In this Privacy Policy, "personal information" means information that can be used to identify an individual, either from that information alone or from that information combined with other information Lumi has access about that individual.</p>
+<p>By using Lumi products and services, you are deemed to have read, acknowledged and accepted all the provisions stated here in the Privacy Policy, including any changes we may make from time to time. We are committed to protecting the privacy, confidentiality and security of your personal information by complying with applicable laws, including your local data protection legislation. We are equally committed to ensuring that all our employees and agents uphold these obligations.
+</p>
+<p>Ultimately, what we want is the best for all our users. Should you have any concerns with our data handling practice as summarized in this Privacy Policy, please contact our Data Protection Officer at privacy@lumiunited.com to address your specific concerns. We will be happy to address them directly.
+ </p>
+
+<h3 >WHAT INFORMATION IS COLLECTED AND HOW DO WE USE IT?</h3>
+<h4>TYPES OF INFORMATION COLLECTED</h4>
+<p>In order to provide our services to you, we will ask you to provide personal information that is necessary to provide those services to you. If you do not provide your personal information, we may not be able to provide you with our products or services.</p>
+<p>We may collect the following types of information (which may or may not be personal information):</p>
+
+<p>
+  <strong>Information you provide to us or upload (including your contact details):  </strong>We may collect any and all personal information you provide to us, like your Mi Account details.
+</p>
+<p>
+  <strong>Device data: </strong>We may gather and use data related to your device, such as the type of device, product model information, product device ID, IP address, and MAC address in order to provide device-specific services and to diagnose and solve problems reported by users.
+</p>
+<p><strong>Wi-Fi information:</strong>We may collect and use information relating to your Wi-Fi connection, such as SSID, signal strength, and information which needs to be gathered in order to connect to Wi-Fi and use web services.
+ </p>
+<p>
+  <strong>Air conditioner information: </strong>We may collect and use information relating to your air conditioner, such as the air conditioner's brand, power consumption, on/off status, temperature setting, mode, power level, and oscillation status in order to display the status of your air conditioner in the app.
+</p>
+<p>
+  <strong>User scenarios: </strong>We may collect and use saved information needed to provide user scenario functionality. 
+</p>
+<p><strong>Device logs:</strong>We may collect device logs, such as user crash logs, as well as information relating to how users operate their device in order to provide a better product and app user experience.</p>
+
+<h4>HOW THE PERSONAL INFORMATION IS USED</h4>
+<p>Personal information is collected in order to provide you with products and/or services as well as to ensure legal compliance on our part pursuant to applicable laws. You hereby consent that we may process and disclose personal information to our affiliated companies (which are in the communications, social media, technology and cloud businesses), Third Party Service Providers (defined below) for the purposes stated in this Privacy Policy.</p>
+<p>We may use your personal information for the following purposes:</p>
+<ul>
+  <li>Providing, processing, maintaining, improving and developing our goods and/or services to you, including after-sales and customer support and for services on your device or through our websites.</li>
+  <li>Communicating with you about your device, service or any general queries, such as updates, customer inquiry support, information about our events, notices.</li>
+  <li>Analyzing and developing statistical information on use of our products and services to better improve our products and services.</li>
+  <li>Your air conditioner information will be used to provide you with certain functionality in the Mi Home app, such as displaying your air conditioner information on the plugin page of the Mi Home app and using the Mi Home app to remotely control the air conditioner.</li>
+  <li>This information is also used to provide you with user scenario functionality.</li>
+</ul>
+
+
+
+
+<h4>DIRECT MARKETING</h4>
+<p>We may use your Mi Account ID to provide you with relevant promotional materials for products and services of Lumi. We will only use your personal data after we have obtained your consent or indication of no objection in accordance with local data protection laws, which may require separate explicit consent. You have the right to opt out of our proposed use of your personal data for direct marketing. If you no longer wish to receive certain types of email communications, you may opt-out by sending an e-mail to privacy@lumiunited.com. We will not transfer your personal data to our business partners for use by our business partners in direct marketing.</p>
+
+
+<h3>WHO DO WE SHARE YOUR INFORMATION WITH?</h3>
+<p>We do not sell any personal information to third parties.</p>
+<p>We may disclose your personal information on occasion to third parties (as described below) in order to provide the products or services that you have requested.</p>
+<p>We may disclose your personal information to third-party service providers and affiliated companies as listed below. In each case described in this section, you can be assured that Lumi will only share your personal information in accordance with your consent. You should know that when Lumi shares your personal information with a Third Party Service Provider under any circumstance described in this section, Lumi will contractually specify that the third party is subject to practices and obligations to comply with applicable local data protection laws. Lumi will contractually ensure compliance by any Third Party Service Providers with the privacy standards that apply to them in your home jurisdiction.</p>
+
+<h4>SHARING WITH OUR GROUP AND THIRD PARTY SERVICE PROVIDERS</h4>
+<p>In order to conduct business operations smoothly in providing you with the full capabilities of our products and services, we may disclose your personal information from time to time to other Lumi affiliated companies (in communications, social media, technology or cloud businesses), or our third party service providers which are our mailing houses, delivery service providers, telecommunications companies, data centers, data storage facilities, customer service providers, advertising and marketing service providers, and Lumi’s representatives. Such Third Party Service Providers would be processing your personal information on Lumi’s behalf or for one or more of the purposes listed above. If you no longer wish to allow us to share this information, please contact us at privacy@lumiunited.com.</p>
+
+<h4>SHARING WITH OUR GROUP’S ECOSYSTEM COMPANIES</h4>
+<p>Xiaomi cooperates with a group of cool companies which together form the Mi Ecosystem. The Mi Ecosystem companies are independent entities, invested and incubated by Xiaomi, and are experts in their fields. Lumi may disclose your personal data to the Xiaomi or other Mi Ecosystem companies so as to provide you with and improve the exciting products and services (both hardware and software) from the Mi Ecosystem companies. Some of these products and services will still be under the Xiaomi / Mijia / Mitu brands, while others may use their own brand. From time to time, Mi Ecosystem companies may share data with Xiaomi relating to products and services under the Xiaomi brand in order to provide software and hardware services and offer better features and an improved user experience. If Lumi is involved in a merger, acquisition or asset sale of all or a portion of our assets, you will be notified via email and/or a prominent notice on our website, of any changes in ownership, uses of your personal information, and choices you may have regarding your personal information. </p>
+
+<h4>SHARING WITH OTHERS</h4>
+<p>Lumi may disclose your personal information without further consent when required under applicable law.</p>
+
+<h4>INFORMATION NOT REQUIRING CONSENT</h4>
+<p>We may share anonymized information and statistics in aggregate form with third parties for business purposes, for example with advertisers on our website, we may share them trends about the general use of our services, such as the number of customers in certain demographic groups who purchased certain products or who carried out certain transactions.</p>
+<p>For the avoidance of doubt, Lumi may collect, use or disclose your personal information without your consent if it is and only to the extent it is allowed explicitly under local data protection laws. Such disclosure may be brought about by the necessity to protect our rights, ensure the safety of you and other people, and comply with the requirements of the local government to facilitate the investigations of illegal activities.</p>
+
+<h3>SECURITY SAFEGUARDS</h3>
+
+<h4>LUMI'S SECURITY MEASURES</h4>
+<p>We are committed to ensuring that your personal information is secure. In order to prevent unauthorized access, disclosure or other similar risks, we have put in place reasonable physical, electronic and managerial procedures to safeguard and secure the information we collect when using Lumi products and services. We will use all reasonable efforts to safeguard your personal information.</p>
+<p>All your personal information is stored on secure servers that are protected in controlled facilities. We classify your data based on importance and sensitivity, and ensure that your personal information has the highest security level. We make sure that our employees and Third Party Service Providers who access the information to help provide you with our products and services are subject to strict contractual confidentiality obligations and may be disciplined or terminated if they fail to meet such obligations. All in all, we regularly review our information collection, storage and processing practices, including physical security measures, to guard against any unauthorized access and use.</p>
+<p>We will take all practicable steps to safeguard your personal information. However, you should be aware that the use of the Internet is not entirely secure, and for this reason we cannot guarantee the security or integrity of any personal information which is transferred from you or to you via the Internet.</p>
+
+
+<h4>WHAT YOU CAN DO</h4>
+<ul>
+  <li>You can play your part in safeguarding your personal information by not disclosing your login password or account information to anybody unless such person is duly authorized by you.</li>
+  <li>Lumi cannot be held responsible for lapses in security caused by third party accesses to your personal information as a result of your failure to keep your personal information private. Notwithstanding the foregoing, you must notify us immediately if there is any unauthorized use of your account by any other Internet user or any other breach of security.</li>
+  <li>Your assistance will help us protect the privacy of your personal information.</li>
+</ul>
+
+
+<h4>RETENTION POLICY</h4>
+<p>Personal information will be held for as long as it is necessary to fulfill the purpose for which it was collected, or as required or permitted by applicable laws. We shall cease to retain personal information, or remove the means by which the personal information can be associated with particular individuals, as soon as it is reasonable to assume that the purpose for which that personal information was collected is no longer being served by retention of the personal information, including the cases when the personal information is no longer required for resolving legal disputes, applying our Agreements, or achieving our business goals.</p>
+
+<h4>ACCESSING OTHER FEATURES ON YOUR DEVICE</h4>
+<p>Our applications may need access to certain features on your device such as Wi-Fi network status. This information is used to allow the applications to run on your device and allow you to interact with the applications. At any time you may revoke your permissions by turning these off at the device level or contacting us at privacy@lumiunited.com</p>
+
+<h3>YOU HAVE CONTROL OVER YOUR INFORMATION!</h3>
+
+<h4>CONTROLLING SETTINGS</h4>
+<p>Lumi recognizes that privacy concerns differ from person to person. Therefore, we provide examples of ways Lumi makes available for you to choose to restrict the collection, use, disclosure or processing of your personal information and control your privacy settings: For example, you can clear your app's cache and history.</p>
+<ul>
+  <li>Log in and out of the Mi Account</li>
+  <li>Agree/disagree when window of privacy is pop up;</li>
+</ul>
+<p>If you have previously agreed to us using your personal information for the abovementioned purposes, you may change your mind at any time by writing or emailing us at privacy@lumiunited.com.</p>
+
+<h4>ACCESS, UPDATING, CORRECTING OR ERASURE YOUR PERSONAL INFORMATION</h4>
+<ul>
+  <li>You have the right to request access to and/or correction of any other personal information that we hold about you. When you update your personal information, you will be asked to verify your identity before we proceed with your request. Once we obtain sufficient information to accommodate your request for access to or correction of your personal information, we shall proceed to respond to your request within any timeframe set out under your applicable data protection laws.</li>
+  <li>We normally provide such services for free but reserve the right to charge a reasonable fee for your data access request.</li>
+  <li>If you wish to submit a request to access personal data we have about you, or if you believe that any information we have about you is incorrect or incomplete, please write us a letter or send an email to the address provided below as soon as possible. Email: privacy@lumiunited.com.</li>
+</ul>
+
+<h4>WITHDRAWAL OF CONSENT</h4>
+<p>You may withdraw your consent for the collection, use and/or disclosure of your personal information in our possession or control by opening the app and navigating to Settings > Terms of Use and Privacy Policy > Revoke authorization for "Terms of Use and Privacy Policy". We will process your request within a reasonable time from when the request was made, and thereafter not collect, use and/or disclose your personal information as per your request.</p>
+<p>Please recognize that your withdrawal of consent could result in certain legal consequences. Depending on the extent of your withdrawal of consent for us to process your personal information, it may mean that you will not be able to enjoy Lumi’s products and services.</p>
+
+<h4>TRANSFER OF PERSONAL INFORMATION OUTSIDE OF YOUR JURISDICTION</h4>
+<p>To the extent that we may need to transfer personal information outside of your jurisdiction, whether to our affiliated companies (which are in the communications, social media, technology and cloud businesses) or Third Party Service Providers, we shall do so in accordance with the applicable laws. In particular, we will ensure that all transfers will be in accordance with requirements under your applicable local data protection laws by putting in place appropriate safeguards.</p>
+<p>Currently, Lumi has data centers in China, Singapore, Germany, and Russia. These overseas jurisdictions may or may not have in place data protection laws which are substantially similar to that in your home jurisdiction. We may transfer to and store your personal information at our overseas facilities. However, this does not change any of our commitments to safeguard your personal information in accordance with this Privacy Policy.
+</p>
+
+<h3>MISCELLANEOUS</h3>
+
+<h4>MINORS</h4>
+<p>We consider it the responsibility of parents to monitor their children’s use of our products and services. Nevertheless, it is our policy not to require personal information from minors or offer to send any promotional materials to persons in that category.
+</p>
+<p>Lumi does not seek or intend to seek to receive any personal information from minors. Should a parent or guardian have reasons to believe that a minor has provided Lumi with personal information without their prior consent, please contact us to ensure that the personal information is removed and the minor unsubscribes from any of the applicable Lumi services.</p>
+
+<h4>ORDER OF PRECEDENCE</h4>
+<p>If you have agreed to our applicable User Agreements, in the event of inconsistency between such User Agreements and this Privacy Policy, such User Agreements shall prevail.</p>
+
+<h4>UPDATES TO THE PRIVACY POLICY</h4>
+<p>We keep our Privacy Policy under regular review and may update this privacy policy to reflect changes to our information practices. If we make material changes to our Privacy Policy, we will notify you by email (sent to the e-mail address specified in your account) or post the changes on all Lumi websites or through software, so that you may be aware of the information we collect and how we use it. Such changes to our Privacy Policy shall apply from the effective date as set out in the notice or on the website. We encourage you to periodically review this page for the latest information on our privacy practices. Your continued use of products and services on the websites, mobile phones and/or any other device will be taken as acceptance of the updated Privacy Policy. We will seek consent from you again before we collect more personal information from you or when we wish to use or disclose your personal information for new purposes.</p>
+
+<h4>DO I HAVE TO AGREE TO ANY THIRD PARTY TERMS AND CONDITIONS?</h4>
+<p>Our Privacy Policy does not apply to products and services offered by a third party. </p>
+<p>Lumi products and services may include third parties’ products, services and links to third parties’ websites. When you use such products or services, they may collect your information too. For this reason, we strongly suggest that you read the third party’s privacy policy as you have taken time to read ours. We are not responsible for and cannot control how third parties use personal information which they collect from you. Our Privacy Policy does not apply to other sites linked from our services.</p>
+
+<p>Lumi United Technology Co., Ltd.</p>
+
+<p>Address: Rooms 801–806, 8th Floor, JinQi Wisdom Valley, No.1 Tangling Road, Liuxian Ave, Taoyuan Residential District, Nanshan District, Shenzhen, China</p>
+
+<p>Email: privacy@lumiunited.com
+</p>
+
+<p>Thank you for taking the time to understand our Privacy Policy!</p>
+
+
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+[ignore]
+.*/Modules/.*
+.*/node_modules/.*
+.*/*.json
+.*/*.png
+
+[include]
+
+[libs]
+
+[lints]
+
+[options]
+
+[strict]
