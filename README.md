@@ -1,0 +1,2 @@
+# MiotPluginExample
+mint plugin demo
